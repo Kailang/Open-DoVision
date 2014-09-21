@@ -517,27 +517,25 @@ void LED_Read(uint64_t data, uint8_t count) {
 * Return         : Press time in second.
 *******************************************************************************/
 uint8_t But_Pres(void) {
-	uint8_t ButPreHandler(void) {
-		timerDelay = 0xffffff;
-		uint8_t counter = 0;
-		volatile uint32_t timerCheckPoint = timerDelay;
+	timerDelay = 0xffffff;
+	uint8_t counter = 0;
+	volatile uint32_t timerCheckPoint = timerDelay;
 
-		if (!STM_EVAL_PBGetState(BUTTON_USER)) {
-			return 0;							/* Fluck, Ignore */
-		}
-
-		LED_Off();
-		while (STM_EVAL_PBGetState(BUTTON_USER) && (timerDelay > 0x00)) {
-			if ((timerCheckPoint-timerDelay) > 1000) {
-				counter ++;
-				timerCheckPoint = timerDelay;
-				LED_Out(counter);
-			}
-		}
-		LED_Off();
-
-		return counter;
+	if (!STM_EVAL_PBGetState(BUTTON_USER)) {
+		return 0; /* No press */
 	}
+
+	LED_Off();
+	while (STM_EVAL_PBGetState(BUTTON_USER) && (timerDelay > 0x00)) {
+		if ((timerCheckPoint - timerDelay) > 1000) {
+			counter++;
+			timerCheckPoint = timerDelay;
+			LED_Out(counter);
+		}
+	}
+	LED_Off();
+
+	return counter;
 }
 
 /*******************************************************************************
