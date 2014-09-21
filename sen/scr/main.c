@@ -105,25 +105,3 @@ int main(void) {
 
 	return 0;
 }
-
-/*******************************************************************************
-* Function Name  : L3GD20_TIMEOUT_UserCallback
-* Description    : L3GD20 timeout user defined callback.
-* Input          : None.
-* Output         : None.
-* Return         : None.
-*******************************************************************************/
-uint32_t L3GD20_TIMEOUT_UserCallback(void) {
-	return 0;
-}
-
-/*******************************************************************************
-* Function Name  : LSM303DLHC_TIMEOUT_UserCallback
-* Description    : LSM303DLHC timeout user defined callback.
-* Input          : None.
-* Output         : None.
-* Return         : None.
-*******************************************************************************/
-uint32_t LSM303DLHC_TIMEOUT_UserCallback(void) {
-	return 0;
-}
