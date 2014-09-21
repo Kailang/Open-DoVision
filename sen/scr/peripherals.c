@@ -347,7 +347,7 @@ void Mag_Read(float* pfData) {
 *******************************************************************************/
 void Gyr_Cali(uint8_t sample) {
 	uint8_t i, j;
-	double stake[3];
+	double stake[3] = { 0 };
 
 	for (i=0; i<3; i++) {
 		for (j=0; j<sample; j++) {
