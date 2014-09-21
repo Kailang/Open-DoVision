@@ -80,7 +80,7 @@ void Delay(uint32_t time) {
 * Output         : None.
 * Return         : None.
 *******************************************************************************/
-void Gyr_Init(/*uint16_t gyrScale*/) {
+void Gyr_Init(void) {
 	L3GD20_InitTypeDef L3GD20_InitStructure;
 	L3GD20_FilterConfigTypeDef L3GD20_FilterStructure;
 
@@ -112,7 +112,7 @@ void Gyr_Init(/*uint16_t gyrScale*/) {
 * Output         : None.
 * Return         : None.
 *******************************************************************************/
-void Acc_Init(/*uint16_t accScale*/) {
+void Acc_Init(void) {
 	LSM303DLHCAcc_InitTypeDef LSM303DLHCAcc_InitStructure;
 	LSM303DLHCAcc_FilterConfigTypeDef LSM303DLHCFilter_InitStructure;
 
@@ -149,7 +149,7 @@ void Acc_Init(/*uint16_t accScale*/) {
 * Output         : None.
 * Return         : None.
 *******************************************************************************/
-void Mag_Init(/*uint16_t magScale*/) {
+void Mag_Init(void) {
 	LSM303DLHCMag_InitTypeDef LSM303DLHC_InitStructure;
 
 	/* Configure MEMS magnetometer main parameters: temp, working mode, full Scale and Data rate */
@@ -510,29 +510,34 @@ void LED_Read(uint64_t data, uint8_t count) {
 }
 
 /*******************************************************************************
-* Function Name  : ButPreHandler.
+* Function Name  : But_Pres.
 * Description    : Check if button is pressed and how long it is pressed.
 * Input          : None.
 * Output         : None.
-* Return         : 0- Not pressed; 1- Pressed < 1s; 2- Pressed > 1s.
+* Return         : Press time in second.
 *******************************************************************************/
-uint8_t ButPreHandler(void) {
-	if (STM_EVAL_PBGetState(BUTTON_USER)) {		/* If button is pressed */
-		Delay(50);
+uint8_t But_Pres(void) {
+	uint8_t ButPreHandler(void) {
+		timerDelay = 0xffffff;
+		uint8_t counter = 0;
+		volatile uint32_t timerCheckPoint = timerDelay;
+
 		if (!STM_EVAL_PBGetState(BUTTON_USER)) {
 			return 0;							/* Fluck, Ignore */
 		}
 
-		timerDelay = 1000;						/* Count down 1s */
-		while (STM_EVAL_PBGetState(BUTTON_USER) && (timerDelay > 0)) {
-		}										/* Wait max 2s. for button release */
-		if (timerDelay > 0) {			/* Short button press */
-			return 1;
-		} else {								/* Long button press */
-			return 2;
+		LED_Off();
+		while (STM_EVAL_PBGetState(BUTTON_USER) && (timerDelay > 0x00)) {
+			if ((timerCheckPoint-timerDelay) > 1000) {
+				counter ++;
+				timerCheckPoint = timerDelay;
+				LED_Out(counter);
+			}
 		}
+		LED_Off();
+
+		return counter;
 	}
-	return 0;
 }
 
 /*******************************************************************************

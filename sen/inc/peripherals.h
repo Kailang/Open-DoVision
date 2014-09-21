@@ -64,9 +64,9 @@
 void SysTick_Handler(void);
 void Delay(uint32_t time);
 
-void Gyr_Init(/*uint16_t gyrScale*/);
-void Acc_Init(/*uint16_t accScale*/);
-void Mag_Init(/*uint16_t magScale*/);
+void Gyr_Init(void);
+void Acc_Init(void);
+void Mag_Init(void);
 void Gyr_Read(float* pfData);
 void Acc_Read(float* pfData);
 void Mag_Read(float* pfData);
@@ -81,7 +81,7 @@ void LED_Dim(Led_TypeDef LED);
 void LED_Out(uint8_t byte);
 void LED_Read(uint64_t data, uint8_t count);
 
-uint8_t ButPreHandler(void);
+uint8_t But_Pres(void);
 
 void Fla_Read32(uint8_t id, uint32_t* pdata, uint8_t length);
 uint8_t Fla_Writ32(uint8_t id, uint32_t* pdata, uint8_t length);

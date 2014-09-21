@@ -72,7 +72,7 @@ int main(void) {
 	/* Infinite loop */
 	while (1) {
 		/* Button Calibration */
-		if (ButPreHandler() > 0) {
+		if (But_Pres() > 0) {
 			LED_Out(0xff);
 			Delay(800);
 			LED_Out(0x0f);
