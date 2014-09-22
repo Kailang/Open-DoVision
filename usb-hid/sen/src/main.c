@@ -101,7 +101,6 @@ void OutPacker(uint8_t repType);
 * Return         : None.
 *******************************************************************************/
 int main(void) {
-
 	/* Setup SysTick event each 1 ms */
 	RCC_GetClocksFreq(&RCC_Clocks);
 	if (SysTick_Config(RCC_Clocks.HCLK_Frequency / 1000)) {
