@@ -3,12 +3,19 @@ Open-DoVision
 
 Open Source Virtual Reality for Everyone
 
-Well, this repository mainly has the source code for the Open DoVision sensor board.
-So, most of the files are written in the C language.
+master		- All the original files written for Open DoVision
 
-Since the implementations of the sensor board are indefinate, different usages will be store in different brenches.
-Note that some of the brenches may contain non-C source code for the need of PC demos.
+Embedded C Project	Only a few files which cannot be called a complete project
+Application		N/A
+SDK			N/A
 
-Of cause, unless told elsewhere, all the files are published under GUN GPL V3.0 License.
+This master branch is designed to give you a brief overview of the Open DoVision.
+It is recommended to spend a few minutes examing this brench before going deeper. Of course, feel free to go into more specific brenches as you like.
 
-Enjoy!
+The libraries that are not developed by DotLab are provided under their own licence
+
+odvTypes.h	Defines all the useful type that may or may not be directly or indirectly used by you and me.
+
+globalVars.h	Use the odvTypes to initiate some data holder for the application.
+
+peripherals.h/.c	Useful functions for Open DoVision
