@@ -16,6 +16,20 @@ Plus our sensor board is designed to be compatible with the STM32F3DISCOVERY , t
 
 Please see the README.txt otr Release_Notes.html in each file for full documentation on these SDKs.
 
+In order to start developing the other real projects for Open DoVision or your own STM32F3DISCOVERY, you have to download the **lib** folder for it **will not show** in other branshes because of its complexity.
+
+You should include:
+
+**lib/CMSIS/Include**
+
+**lib/CMSIS/Device/ST/STM32F30x/Include**
+
+**lib/STM32_USB-FS-Device_Driver/inc**
+
+**lib/STM32F30x_StdPeriph_Driver/inc**
+
+**lib/STM32F3_Discovery**
+
 ***
 
 ###Folders:
