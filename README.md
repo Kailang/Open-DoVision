@@ -5,6 +5,10 @@ Open Source Virtual Reality for Everyone
 
 **master** - All the original files written for Open DoVision
 
+***
+
+###General:
+
 **Embedded C Project** Only a few files which cannot be called a complete project
 
 **Application** N/A
@@ -17,18 +21,23 @@ It is recommended to spend a few minutes examing this brench before going deeper
 
 The libraries that are not developed by DotLab are provided under their own licence
 
-**odvTypes.h** Defines all the useful type that may or may not be directly or indirectly used by you and me.
-
-**globalVars.h** Use the odvTypes to initiate some data holder for the application.
-
-**peripherals.h/.c** Useful functions for Open DoVision
 
 ***
 
-You will find following folders:
+###Folders:
 
 **sen** Embedded C Project => **lib** Dependencies **inc** Headers **scr** source
 
 **app** PC Application
 
 **sdk** SDK
+
+***
+
+###Key files:
+
+**odvTypes.h** Defines all the useful type that may or may not be directly or indirectly used by you and me.
+
+**globalVars.h** Use the odvTypes to initiate some data holder for the application.
+
+**peripherals.h/.c** Useful functions for Open DoVision
