@@ -7,7 +7,7 @@ Open Source Virtual Reality for Everyone
 
 ***
 
-###General:
+###General Descriptions:
 
 **Embedded C Project** Only a few files which cannot be called a complete project
 
