@@ -3,7 +3,7 @@ Open-DoVision
 
 Open Source Virtual Reality for Everyone
 
-**master** - The default mouse project written for Open DoVision
+**master** - The mouse project written for Open DoVision
 
 ***
 
@@ -15,7 +15,7 @@ Open Source Virtual Reality for Everyone
 
 **SDK** N/A
 
-This master branch is designed to give you a brief overview of the Open DoVision. And let you enjoy games that are not designed to be 3D rendering ready.
+This project is designed to give you a brief overview of the Open DoVision. And let you enjoy games that are not designed to be 3D rendering ready.
 
 It is recommended to spend a few minutes examing this brench before going deeper. Of course, feel free to go into more specific brenches as you like.
 
