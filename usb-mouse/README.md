@@ -3,7 +3,7 @@ Open-DoVision
 
 Open Source Virtual Reality for Everyone
 
-**master** - The mouse project written for Open DoVision
+**usb-mouse** - The mouse project written for Open DoVision
 
 ***
 
